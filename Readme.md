@@ -1,10 +1,10 @@
-#Readme for Scoring Scripts for GitHub
+# Readme for Scoring Scripts for GitHub
 
 Replace XXX with number
 
 
 
-##Accessible AQ
+## Accessible AQ
 A script for marking the new accessible versions of the AQ
 It takes both versions
 This will give scores for overall, subscales and the Short Form AQ 10 item version
@@ -12,12 +12,12 @@ Marks dichotomously
 Marks neutral as 0.5
 Must be CSV
 
-###Version A
+### Version A
 Four possible responses (on Likert scale)
 Items 1 - 50
 Column names must be AccAQ_A_XXX
 
-###Version B
+### Version B
 Two images version
 Items 1-50
 Column names must be AccAQ_B_XXX
@@ -26,7 +26,7 @@ Will mark numbers or words if in lower case (e.g. definitely agree)
 
 ___
 
-##Original AQ
+## Original AQ
 A script to mark the original AQ 50 item version
 This will give scores for overall, subscales and the Short Form AQ 10 item version
 Marks dichotomously
@@ -40,7 +40,7 @@ Currently trying to adapt so it takes words with capitals at start (Definitely A
 
 ___
 
-##QCAE
+## QCAE
 Marks the original and our adapted for parents version
 Takes numbers and lower case wording (strongly agree)
 Marks on scale
@@ -52,7 +52,7 @@ Item columns must be labelled: QCAE_XXX
 
 ___
 
-#Scripts to recode datasets
+# Scripts to recode datasets
 
 These are small scripts to be used when compiling multiple datasets
 For instance when one study uses a 3 to indicate someone has dyslexia while another uses 5 to indicate the same thing
@@ -62,7 +62,7 @@ These aren't a big deal but might be handy
 
 ___
 
-##Emotion Scoring Script
+## Emotion Scoring Script
 
 Scores emotion stimuli
 I feel this description will need adding to...
