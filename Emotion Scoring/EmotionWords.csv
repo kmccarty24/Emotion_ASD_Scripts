@@ -1,4 +1,4 @@
-angry,bored,disgust,happy,neutral,other,sad,scared,surprise,worried
+angry,bored,disgusted,happy,neutral,other,sad,scared,surprised,worried
 1,1,1,1,1,0,1,1,1,1
 angry,bored,disgust,happy,neutral,confused,sad,scared,bewilderment,worried
 aggression,boredom,discuss,cheerful ,blank,-999,crestfallen,alarm,amazed,a bundle of nerves 
@@ -14,19 +14,19 @@ disgruntled,,disscusted ,glee,impartial,angst,glum ,horror,shocked,unease
 frustrated,,sickened,gleeful,natural,anguish,grief,horror ,suprise,worry
 frustration,,queasy ,glory,,anticipation,grief,panic,suprised,anxiousness
 fury,,revulsion,good ,,apathy,heartbroken ,scared ,surprise,anxiety
-grumpy ,,digested,great ,,away,heartsunk ,shock,surprised,concerns
-in high dudgeon,,disgusting,happiness,,awful,melancholy,terrified,surprize,worries
-infuriated,,disguised,happy as a clam,,bad,miserable ,terrified ,surprized,concern
-irate,,buck,jolly,,bad,mournful,afraid,wonder,
-irritation,,disgusted,joy,,bad mood ,sadness,aghast,replied,
-livid,,,joyful,,bamboozled,sorrow,fearful,stun,
-mad,,,overjoyed,,blissful,sorrow ,fare,stunn,
+grumpy ,,digested,great ,,away,heartsunk ,terrified,surprised,concerns
+in high dudgeon,,disgusting,happiness,,awful,melancholy,terrified ,surprize,worries
+infuriated,,disguised,happy as a clam,,bad,miserable ,afraid,surprized,concern
+irate,,buck,jolly,,bad,mournful,aghast,wonder,
+irritation,,disgusted,joy,,bad mood ,sadness,fearful,replied,
+livid,,,joyful,,bamboozled,sorrow,fare,stun,
+mad,,,overjoyed,,blissful,sorrow ,,stunn,
 mad,,,pleased,,but,tearful,,stunned,
-pissed ,,,pleasure,,chilled,unhappy,,,
-rage,,,thrilled,,cold,upset,,,
-rage,,,wonderful,,concentration,sadly,,,
-seeing red,,,joyous,,concerned,miserable,,,
-temper,,,amused,,confident,down,,,
+pissed ,,,pleasure,,chilled,unhappy,,shockedhorrid,
+rage,,,thrilled,,cold,upset,,shockedangry,
+rage,,,wonderful,,concentration,sadly,,alarmed,
+seeing red,,,joyous,,concerned,miserable,,flabbergasted ,
+temper,,,amused,,confident,down,,surprisedpensive ,
 vexed,,,joys,,confident,solemn,,,
 wrath,,,laughter,,confused,devastated,,,
 furious,,,laughing,,confused,unhappiness,,,

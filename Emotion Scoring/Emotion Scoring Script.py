@@ -18,7 +18,7 @@ class SpellingError(Exception):
 
 # Read CSV / Ditch unecessary columns
 wd = os.getcwd()
-raw_csv = pd.read_csv(wd + '\\Karen Masters Student Data.csv')
+raw_csv = pd.read_csv(wd + '\\KarenDataToAdd.csv')
 
 print raw_csv.head()
 
@@ -33,8 +33,8 @@ ColstoKeep = ['happy',
               'bored',
               'angry',
               'neutral',
-              'disgust',
-              'surprise',
+              'disgusted',
+              'surprised',
               'other']
 
 extractedDF = pd.DataFrame()
@@ -58,8 +58,8 @@ worried = wordDF['worried'].dropna().tolist()
 bored = wordDF['bored'].dropna().tolist()
 angry = wordDF['angry'].dropna().tolist()
 neutral = wordDF['neutral'].dropna().tolist()
-disgust = wordDF['disgust'].dropna().tolist()
-surprise = wordDF['surprise'].dropna().tolist()
+disgusted = wordDF['disgusted'].dropna().tolist()
+surprised = wordDF['surprised'].dropna().tolist()
 other = wordDF['other'].dropna().tolist()
 
 
@@ -145,7 +145,7 @@ print 'Passed Spelling'
 
 keywords = {'happy': happy, 'sad': sad, 'scared': scared,
             'worried': worried, 'bored': bored, 'angry': angry,
-            'disgust': disgust, 'surprise': surprise,
+            'disgusted': disgusted, 'surprised': surprised,
             'neutral': neutral}
 
 # Begin Marking (finally)
@@ -267,7 +267,7 @@ stackedDF['OverallTotal'] = scoredDF[[col for col in scoredDF.columns if '_Score
 
 outputDF = pd.concat([clonedRaw, stackedDF], axis=1)
 
-output = outputDF.to_csv(str(wd + "\\Karen Masters Student Data_Scored.csv"))
+output = outputDF.to_csv(str(wd + "\\KarenDataToAdd_Scored.csv"))
 
 
 # Make it able to add incorrect words to the column as it iterates through responses
