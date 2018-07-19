@@ -7,4 +7,6 @@ newDF = rawData.filter(like='_Scored')
 
 newDF.head()
 
-newDF.apply(pd.Series.value_counts, normalize=True, axis=1,)
+values = newDF.apply(pd.Series.value_counts, normalize=True, axis=0)
+
+values.to_csv('NormalisedCorrect.csv', index=False)
