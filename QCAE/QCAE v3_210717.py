@@ -38,7 +38,7 @@ for c in qcaedata:
     col_name = str(c)+"_scored" 
     score = []
     if c in forward:
-        print "forward"
+        print("forward")
         for i in qcaedata[c]:
             if i == 'strongly agree' or i == 1:
                 score.append(4)
@@ -57,7 +57,7 @@ for c in qcaedata:
         qcaedata[col_name] = score
                         
     if c in reverse:
-        print"reverse"
+        print("reverse")
         for i in qcaedata[c]:
             if i == 'strongly agree' or i == 1:
                 score.append(1)

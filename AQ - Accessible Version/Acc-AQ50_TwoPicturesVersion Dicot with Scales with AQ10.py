@@ -42,7 +42,7 @@ for c in aqdata:
     col_name = str(c)+"_scored" 
     score = []
     if c in agree_a:
-        print "in agree_a"
+        print("in agree_a")
         for i in aqdata[c]:
             if i == 'definitely agree' or i == 1:
                 score.append(1)
@@ -61,7 +61,7 @@ for c in aqdata:
         aqdata[col_name] = score
                         
     if c in disagree_a:
-        print"in disagree_a"
+        print("in disagree_a")
         for i in aqdata[c]:
             if i == 'definitely agree' or i == 1:
                 score.append(0)
@@ -184,7 +184,7 @@ for c in aqdata:
     col_name = str(c)+"_scored" 
     score = []
     if c in agree_b:
-        print "in agree_b"
+        print("in agree_b")
         for i in aqdata[c]:
             if i == 'definitely agree' or i == 1:
                 score.append(1)
@@ -203,7 +203,7 @@ for c in aqdata:
         aqdata[col_name] = score
                         
     if c in disagree_b:
-        print"in disagree_b"
+        print("in disagree_b")
         for i in aqdata[c]:
             if i == 'definitely agree' or i == 1:
                 score.append(0)

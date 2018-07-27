@@ -20,7 +20,7 @@ class SpellingError(Exception):
 wd = os.getcwd()
 raw_csv = pd.read_csv(wd + '\\KarenDataToAdd.csv')
 
-print raw_csv.head()
+print(raw_csv.head())
 
 
 raw_csv = raw_csv.fillna(value='minus999')
@@ -44,7 +44,7 @@ for col in raw_csv:
         extractedDF[col] = raw_csv[col]
         del raw_csv[col]
 
-print extractedDF.head()
+print(extractedDF.head())
 
 clonedRaw = raw_csv
 
@@ -106,18 +106,18 @@ def userInput(unknown, correctAns, correct_list):  # TO DO Add to CSV if 'correc
     validResp = False
     while validResp is False:
 
-        print "##########################################################"
-        print "Correct Answer: {}".format(correctAns)
-        print "Unknown Word Found: {} ".format(unknown)
-        print "Mark as Correct?"
-        print "Type Yes if Correct"
-        print "Type No if Incorrect"
-        print "##########################################################"
+        print("##########################################################")
+        print("Correct Answer: {}".format(correctAns))
+        print("Unknown Word Found: {} ".format(unknown))
+        print("Mark as Correct?")
+        print("Type Yes if Correct")
+        print("Type No if Incorrect")
+        print("##########################################################")
 
-        userinput = raw_input("Your Response: ").lower()
+        userinput = input("Your Response: ").lower()
 
         if str(userinput) not in acceptedTerms:
-            print "Invalid Response, Please Try Again..."
+            print("Invalid Response, Please Try Again...")
             continue
         elif str(userinput) in acceptedTerms:
             validResp = True
@@ -139,9 +139,9 @@ def userInput(unknown, correctAns, correct_list):  # TO DO Add to CSV if 'correc
 
 extractedDF_NoSpell = extractedDF
 
-print 'Starting Spelling'
+print('Starting Spelling')
 extractedDF = extractedDF.applymap(correctSpelling)
-print 'Passed Spelling'
+print('Passed Spelling')
 
 keywords = {'happy': happy, 'sad': sad, 'scared': scared,
             'worried': worried, 'bored': bored, 'angry': angry,
@@ -156,10 +156,10 @@ counter = 1
 for c in extractedDF:
     score = []
     col_name = str(c) + '_Scored'
-    print "##########################################################"
-    print "Column Name %s" % (c)
-    print "iteration %i" % (counter)
-    print "##########################################################"
+    print("##########################################################")
+    print("Column Name %s" % (c))
+    print("iteration %i" % (counter))
+    print("##########################################################")
     correct_word = str((extractedDF[c][0]))
     correct_list = keywords[correct_word]
 
@@ -167,32 +167,32 @@ for c in extractedDF:
     keywords.pop(correct_word)
 
     # Flatten the list of dictionary values (double for loop: for item within each sub_list in keywords.values)
-    incorrFlat = [item for sublist in keywords.values() for item in sublist]
+    incorrFlat = [item for sublist in list(keywords.values()) for item in sublist]
 
     score.append(correct_word)
     for words in extractedDF[c][1:]:  # Skip first row
-        print 'Cell: ', words
+        print('Cell: ', words)
 
         if len(words.split()) == 1:
             if words in correct_list:
                 score.append(1)
-                print '1 word, correct'
+                print('1 word, correct')
 
             elif str(words) is 'nan':
-                print 'found NaN'
+                print('found NaN')
                 score.append(0)
 
             elif words in incorrFlat or words in other:
                 score.append(0)
-                print '1 word, wrong'
+                print('1 word, wrong')
 
             else:
-                print 'going to user'
+                print('going to user')
                 userScore, correct_list = userInput(words, correct_word, correct_list)
                 score.append(userScore)
 
         elif len(words.split()) > 1:
-            print 'more than one word: ', words
+            print('more than one word: ', words)
             wordList = words.split()
             tally = []
 
@@ -200,14 +200,14 @@ for c in extractedDF:
                 if word in incorrFlat:
                     score.append(0)
                     tally = []
-                    print 'Found illegal word, automatic incorrect'
+                    print('Found illegal word, automatic incorrect')
                     break
                 elif word in correct_list:
                     tally.append(1)
-                    print 'adding correct word to tally'
+                    print('adding correct word to tally')
                 elif word in other:
                     tally.append(2)
-                    print 'adding alternative word to tally'
+                    print('adding alternative word to tally')
                 elif word not in correct_list and word not in incorrFlat:
 
                     userScore, correct_list = userInput(words, correct_word, correct_list)
@@ -228,9 +228,9 @@ for c in extractedDF:
 
 # Save the new Keywords File
 keywords['other'] = other
-updatedEmoWords = pd.DataFrame(dict([(k, pd.Series(v)) for k, v in keywords.iteritems()]))
+updatedEmoWords = pd.DataFrame(dict([(k, pd.Series(v)) for k, v in keywords.items()]))
 updatedEmoWordsOUT = updatedEmoWords.to_csv(str(wd + '\\EmotionWords.csv'), index= False)
-print 'Iteration Finished'
+print('Iteration Finished')
 
 # Concatenate DFs
 
